@@ -9,21 +9,17 @@ class Traveler {
     }
 
     hunt() {
-        return this.food += 2
+
+        this.food += 2
     }
 
     eat () {
-        return this.food -= 1
-    }
 
-    checkIsHealthy() {
-        const food = this.food
-
-        if (food < 1) {
+        if (this.food > 0) {
+            this.food -= 1
+        } else {
             this.isHealthy = false
         }
-
-        return isHealthy()
     }
 
 }

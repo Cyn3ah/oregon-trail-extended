@@ -4,37 +4,33 @@ class Wagon {
         
         this.capacity = capacity
         this.passengers = []
-        this.shouldQuarantine = false
 
     }
 
     getAvailableSeatCount() {
-        const passengerCount = passengers.length
-        const emptySeats = (capacity - passengerCount)
+        const passengerCount = this.passengers.length
+        const emptySeats = (this.capacity - passengerCount)
 
-        if (emptySeats = 0) {
-            this.emptySeats = false
-        }
-
-        return emptySeats()
+        return emptySeats
     }
 
-    join (Traveler) {
-        append.passengers(this.passenger)
-        passengerCount = passengers.length
+    join (traveler) {
+
+        if (this.getAvailableSeatCount() > 0) {
+        this.passengers.push(traveler)
+        }
     }
 
     shouldQuarantine () {
-        const isHealthy = capacity.length
 
-        if (isHealthy > 1)
-        return true
+        return this.passengers.some(traveler => (traveler.isHealthy === false))
+
     }
 
+    totalFood () {
+
+        return this.passengers.food
+
+    }
 
 }
-
-// console.log(Traveler)
-
-// Let myWagon = new Wagon(5)
-// Constructor (capacity) {}

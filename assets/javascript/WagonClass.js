@@ -29,8 +29,15 @@ class Wagon {
 
     totalFood () {
 
-        return this.passengers.food
+        // return this.passengers.food
+
+       return this.passengers.reduce((accumulator, passenger) => accumulator + passenger.food, 0)
+        
+        // console.log(totalFood)
 
     }
 
+
 }
+
+// const (passengers.food)Sum = passengers => passengers.reduce((a,b) => a + b, 0)
